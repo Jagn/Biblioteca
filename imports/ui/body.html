@@ -8,26 +8,34 @@
   <!-- {{> navbar}} -->
   <div class="container">
     <header>
-      <h1>Todo List ({{incompleteCount}})</h1>
+      <h1>Biblioteca FUP ({{incompleteCount}})</h1>
   
       <label class="hide-completed">
         <input type="checkbox" />
-        Hide Completed Tasks
+        Estado 
       </label>
 
       {{> loginButtons}}
 
       {{#if currentUser}}
-        <form class="new-task">
-          <input type="text" name="text" placeholder="Type to add new tasks" />
+        <form class="new-estu">
+          <input type="text" name="text" placeholder="Estudiante" />
         </form>
       {{/if}}
     </header>
     
     {{#if currentUser}}
     <ul>
-      {{#each tasks}}
-        {{> task}}
+      {{#each estudiantes}}
+        {{> temEstu}}
+      {{/each}}
+    </ul>
+    {{/if}}
+
+    {{#if currentUser}}
+    <ul>
+      {{#each libros}}
+        {{> temEstu}}
       {{/each}}
     </ul>
     {{/if}}
