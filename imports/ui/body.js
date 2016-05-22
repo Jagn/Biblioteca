@@ -12,7 +12,7 @@ import './body.html';
 Template.body.helpers({
   estudiantes() {
   	const instance = Template.instance();
-    if (instance.state.get('')) {
+    if (instance.state.get('estudiantes')) {
       // If hide completed is checked, filter tasks
       return Estudiantes.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
     }
@@ -20,7 +20,7 @@ Template.body.helpers({
     return Estudiantes.find({}, { sort: { createdAt: -1 } });
   },
   incompleteCount() {
-    return Tasks.find({ checked: { $ne: true } }).count();
+    return Estudiantes.find({ checked: { $ne: true } }).count();
   },
 });
 
@@ -41,10 +41,9 @@ Template.body.helpers({
   },
 });
 
-
-
+//event
 Template.body.events({
-  'submit .new-task'(event) {
+  'submit .new-estu'(event) {
     // Prevent default browser form submit
     event.preventDefault();
  
@@ -52,21 +51,44 @@ Template.body.events({
     const text = event.target.text.value;
  
     // Insert a task into the collection
-    Meteor.call('tasks.insert', text);
+    Meteor.call('estudiantes.insert', text);
  
     // Clear form
     event.target.text.value = '';
   },
 
   'change .hide-completed input'(event, instance) {
-    instance.state.set('hideCompleted', event.target.checked);
+    instance.state.set('estudiantes', event.target.checked);
+  },
+
+Template.body.events({
+  'submit .new-libro'(event) {
+    // Prevent default browser form submit
+    event.preventDefault();
+ 
+    // Get value from form element
+    const text = event.target.text.value;
+ 
+    // Insert a task into the collection
+    Meteor.call('libros.insert', text);
+ 
+    // Clear form
+    event.target.text.value = '';
+  },
+
+  'change .hide-completed input'(event, instance) {
+    instance.state.set('libros', event.target.checked);
   },
 });
 
 
 Template.body.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
-  Meteor.subscribe('tasks');
+  Meteor.subscribe('estudiantes');
+});
+Template.body.onCreated(function bodyOnCreated() {
+  this.state = new ReactiveDict();
+  Meteor.subscribe('libros');
 });
 
 
