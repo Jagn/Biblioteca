@@ -49,7 +49,8 @@ form {
   position: relative;
 }
  
-.new-task input {
+
+ .new-estu input {
   box-sizing: border-box;
   padding: 10px 0;
   background: transparent;
@@ -59,10 +60,24 @@ form {
   font-size: 1em;
 }
  
-.new-task input:focus{
+.new-estu input:focus{
   outline: 0;
 }
+
+.new-libro input {
+  box-sizing: border-box;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  width: 100%;
+  padding-right: 80px;
+  font-size: 1em;
+}
  
+.new-libr input:focus{
+  outline: 0;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -132,14 +147,34 @@ header .hide-completed {
 
 /* CSS declarations go here */
 
-.block-a{
-  background:#e1e1e8;
+..block-a{
+  background: green;
   padding: 20px;
+  
 }
 
 .block-b{
-  background:#7aec06;
+  background: orange;
   padding: 20px;
+  
 }
+
+.block-c{
+  background: white;
+  padding: 20px;
+  
+}
+
+.block-d{
+  background: yellow;
+  padding: 20px;
+  
+}
+
+.listadolibros{
+  line-height: 14px;
+  margin-bottom: 20px;
+}
+
 
 }
