@@ -7,6 +7,7 @@ import './temEstu.js';
 import './temLibro.js';
 import './body.html';
 
+//estado del estudiante...
 
 Template.body.helpers({
   estudiantes() {
@@ -23,18 +24,20 @@ Template.body.helpers({
   },
 });
 
+
+
 Template.body.helpers({
-  estudiantes() {
+  libros() {
   	const instance = Template.instance();
-    if (instance.state.get('estudiantes')) {
+    if (instance.state.get('libros')) {
       // If hide completed is checked, filter tasks
-      return Tasks.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
+      return Libros.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
     }
 
-    return Tasks.find({}, { sort: { createdAt: -1 } });
+    return Libros.find({}, { sort: { createdAt: -1 } });
   },
   incompleteCount() {
-    return Tasks.find({ checked: { $ne: true } }).count();
+    return Libros.find({ checked: { $ne: true } }).count();
   },
 });
 
