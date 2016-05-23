@@ -24,8 +24,6 @@ Template.body.helpers({
   },
 });
 
-
-
 Template.body.helpers({
   libros() {
   	const instance = Template.instance();
