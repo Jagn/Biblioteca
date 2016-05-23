@@ -14,12 +14,12 @@ Meteor.methods({
 });
 
 if (Meteor.isServer){
-	Meteor.publish('tasks' , function tasksPublication(){
+	Meteor.publish('estudiantes' , function tasksPublication(){
 		return Estudiantes.find();
 	});
 }
 if (Meteor.isServer){
-	Meteor.publish('tasks' , function tasksPublication(){
+	Meteor.publish('estudiantes' , function tasksPublication(){
 		return Libros.find();
 	});
 }

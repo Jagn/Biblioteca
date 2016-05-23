@@ -61,6 +61,7 @@ Template.body.events({
     instance.state.set('estudiantes', event.target.checked);
   },
 
+
 Template.body.events({
   'submit .new-libro'(event) {
     // Prevent default browser form submit

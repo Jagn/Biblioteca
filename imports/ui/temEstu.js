@@ -43,6 +43,7 @@ Template.temEstu.helpers({
         Session.set('edad',this.edad);
         Session.set('codigo',this.codigo);        
         console.log("user: ",this.name);
+        
     }
      
   });
