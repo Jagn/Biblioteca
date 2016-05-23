@@ -36,7 +36,7 @@ Template.temEstu.helpers({
 
   });
   
-  Template.templateListar.helpers({
+  Template.temLis.helpers({
     libros: function (){
       return Libros.find().fetch();
     }  
@@ -62,7 +62,7 @@ Template.temEstu.helpers({
   });
 
 
-Template.templateLibro.events({
+Template.temLibro.events({
 
     'submit #form-a' : function(event, template){
       event.preventDefault();
@@ -121,6 +121,6 @@ Template.templateLibro.events({
 
 Template.body.onCreated(function bodyOnCreated () {
 this.state = new ReactiveDict();
-Meteor.subscribe('tasks');
+Meteor.subscribe('libros');
 
 });

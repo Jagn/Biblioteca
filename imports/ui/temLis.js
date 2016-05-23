@@ -9,17 +9,16 @@ import './temLis.html';
 
 
 
- Template.templateListar.helpers({
+ Template.temLis.helpers({
     libros: function (){
       return Estudiantes.find().fetch();
     }  
-
-
-
     });
+
   
-  Template.templateListar.events({
+  Template.temLis.events({
     'click .delete':function(){
       //console.log("User: ",user);
-      Libro.remove(this._id);
+      Estudiantes.remove(this._id);
     },
+	});
